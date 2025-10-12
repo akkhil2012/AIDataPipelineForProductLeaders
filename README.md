@@ -3,10 +3,10 @@
 AI Data Pipeline for Product Leaders is a learning and reference project that shows product, data, and engineering teams how to stand up a modular data platform that is ready for AI-powered insights. It combines Spring Boot microservices, Python orchestration utilities, and supporting product collateral so you can demo, prototype, or tailor the pipeline to your own organization.
 
 ## Why this project matters for Product Managers
-- **Accelerate AI feature discovery.** The pipeline demonstrates how raw product usage data can be cleansed, enriched, and exposed for downstream AI models—helping product managers validate new intelligent features quickly.【F:CompleteDataPipeline/data-platform-springboot-microservices/pipeline/README.md†L1-L44】
-- **Quantify ROI.** The included `GenAI_UseCases_ROI_Pipeline.pdf` and presentation assets describe a framework for measuring value and prioritizing AI use cases with stakeholders.【f5ad8b†L1-L4】
-- **Bridge product and engineering conversations.** Each microservice mirrors a stage in a typical product data lifecycle, giving PMs a tangible way to discuss requirements, data contracts, and service level expectations with technical partners.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L1-L32】
-- **Support governance and trust.** Data lineage, deduplication, and quality checks are first-class citizens, ensuring AI initiatives respect compliance and customer expectations.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L21-L70】
+- **Accelerate AI feature discovery.** The pipeline demonstrates how raw product usage data can be cleansed, enriched, and exposed for downstream AI models—helping product managers validate new intelligent features quickly.
+- **Quantify ROI.** The included `GenAI_UseCases_ROI_Pipeline.pdf` and presentation assets describe a framework for measuring value and prioritizing AI use cases with stakeholders
+- **Bridge product and engineering conversations.** Each microservice mirrors a stage in a typical product data lifecycle, giving PMs a tangible way to discuss requirements, data contracts, and service level expectations with technical partners.
+- **Support governance and trust.** Data lineage, deduplication, and quality checks are first-class citizens, ensuring AI initiatives respect compliance and customer expectations.
 
 ## Repository structure
 
@@ -34,10 +34,10 @@ The Spring Boot applications are organized as six independently deployable servi
 | Data Storage | `8085` | Persists curated data and attaches lineage metadata. |
 | Data Consumption | `8086` | Serves ready-for-analysis datasets to analytics or AI services. |
 
-The shared architecture unlocks fast onboarding for new engineers, consistent observability (health checks, metrics, logging), and predictable integration patterns for adjacent systems.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L1-L109】
+The shared architecture unlocks fast onboarding for new engineers, consistent observability (health checks, metrics, logging), and predictable integration patterns for adjacent systems.
 
 ## Orchestration pipeline
-The `pipeline/` folder provides a Python CLI (`run_pipeline.py`) and config-driven YAML definitions to exercise every microservice stage in sequence. Sample data (`sample_data.json`) includes duplicates and intentional quality issues so the pipeline demonstrates realistic transformations during a run. You can dry-run the orchestration with `--simulate` to validate connectivity before spinning up the Java services.【F:CompleteDataPipeline/data-platform-springboot-microservices/pipeline/README.md†L1-L65】
+The `pipeline/` folder provides a Python CLI (`run_pipeline.py`) and config-driven YAML definitions to exercise every microservice stage in sequence. Sample data (`sample_data.json`) includes duplicates and intentional quality issues so the pipeline demonstrates realistic transformations during a run. You can dry-run the orchestration with `--simulate` to validate connectivity before spinning up the Java services.
 
 ### Running the full stack locally
 1. **Start the microservices**
@@ -45,7 +45,7 @@ The `pipeline/` folder provides a Python CLI (`run_pipeline.py`) and config-driv
    cd CompleteDataPipeline/data-platform-springboot-microservices
    docker-compose up --build
    ```
-   Or run each service individually with `mvn spring-boot:run` from its directory.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L73-L93】
+   Or run each service individually with `mvn spring-boot:run` from its directory.
 2. **Install orchestration dependencies**
    ```bash
    pip install requests pyyaml
@@ -54,14 +54,14 @@ The `pipeline/` folder provides a Python CLI (`run_pipeline.py`) and config-driv
    ```bash
    python pipeline/run_pipeline.py --log-level INFO
    ```
-   Use `--simulate --log-level DEBUG` when the services are offline to see the payload transformations without sending HTTP requests.【F:CompleteDataPipeline/data-platform-springboot-microservices/pipeline/README.md†L26-L55】
+   Use `--simulate --log-level DEBUG` when the services are offline to see the payload transformations without sending HTTP requests.
 
 ### Development and operations highlights
-- Consistent REST API surface: each service supports CRUD operations plus `/process` and `/validate` endpoints for Python-driven workflows.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L33-L61】
-- Built-in monitoring hooks: Spring Boot Actuator endpoints (`/actuator/health`, `/actuator/metrics`) expose runtime telemetry out of the box.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L111-L121】
-- Configurable data stores: H2 in-memory databases ship as defaults; swap them for PostgreSQL, MySQL, or cloud data warehouses for production deployments.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L95-L106】
-- Deployment flexibility: run locally with Maven, containerize with Docker Compose, or package JARs for your preferred orchestration platform.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L123-L143】
-
+- Consistent REST API surface: each service supports CRUD operations plus `/process` and `/validate` endpoints for Python-driven workflows.
+- Built-in monitoring hooks: Spring Boot Actuator endpoints (`/actuator/health`, `/actuator/metrics`) expose runtime telemetry out of the box.
+- Configurable data stores: H2 in-memory databases ship as defaults; swap them for PostgreSQL, MySQL, or cloud data warehouses for production deployments.
+- Deployment flexibility: run locally with Maven, containerize with Docker Compose, or package JARs for your preferred orchestration platform.
+  
 ## Using the project in product strategy conversations
 1. **Prioritize AI-enabled scenarios.** Use the ROI framework to align leadership on which product experiences to automate first; map those scenarios to the pipeline stages to clarify data needs and service-level agreements.【F:CompleteDataPipeline/data-platform-springboot-microservices/PROJECT_OVERVIEW.md†L1-L20】
 2. **Design measurable outcomes.** Instrument the pipeline so quality, freshness, and consumption metrics become OKRs for the AI initiative. The orchestrator’s stage summaries provide sample telemetry you can extend into dashboards or alerts.【F:CompleteDataPipeline/data-platform-springboot-microservices/pipeline/README.md†L45-L63】
