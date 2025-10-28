@@ -1,0 +1,25 @@
+Prompt:
+You are scaffolding a new repository named “AIDataPipelineForProductLeaders.” Recreate the project exactly as documented:
+
+1. Root-level README:
+   - Title “AI Data Pipeline for Product Leaders.”
+   - Explain the project’s purpose for product/data/engineering teams and summarize the included collateral (ROI PDF/pptx, governance diagram).
+   - Document the repository structure table pointing to CompleteDataPipeline assets and the microservices + Python orchestration folders.
+   - Capture microservice architecture overview, orchestration instructions (docker-compose + run_pipeline.py), and guidance for product strategy discussions.
+
+2. Directory CompleteDataPipeline/
+   - Place the existing collateral files (GenAI_UseCases_ROI_Pipeline.pdf, GenAI_UseCases_ROI_Pipeline_Visual.pptx, GenAiInDataGovernance.drawio.png, DataPipelineFlow.pdf).
+   - Add subdirectory data-platform-springboot-microservices/ containing:
+       a. PROJECT_OVERVIEW.md describing six Spring Boot services (DataIngestion, DataDeduplication, DataQuality, DataNormalization, DataStorage, DataConsumption) with ports, CRUD APIs, Python FastAPI integration endpoints, architecture layers, and Docker/Maven usage.
+       b. Six service folders (dataingestion-service through dataconsumption-service) each with src/main/java (controller, service, repository, model packages), src/main/resources/application.properties, pom.xml, Dockerfile, README.md, and tests following the shared response schema.
+       c. docker-compose.yml to start all services.
+       d. pipeline/ folder containing README.md, run_pipeline.py, pipeline_config.yaml, sample_data.json implementing the orchestrated flow (ingest → deduplicate → quality → normalize → store → consume), logging, retries, simulate mode, and troubleshooting table.
+       e. DataLineageStage/ folder with Streamlit app (streamlit_app.py), README1.md, requirements.txt, sample_raw.csv, sample_processed.csv implementing lineage validation, schema diffs, PII detection, and governance note generation.
+       f. ui/ folder housing the Streamlit dashboard scaffold mentioned in the root README.
+
+3. Ensure documentation reflects:
+   - How microservices communicate with the Python orchestrator and sample commands (docker-compose up, mvn spring-boot:run, python pipeline/run_pipeline.py --log-level INFO, simulate flag).
+   - Product leader talking points (ROI prioritization, governance alignment, collaboration hand-offs).
+   - Extension ideas (adding stages, streaming ingestion, compliance automation, analytics dashboards).
+
+Output all files with proper paths, code, configuration, and documentation matching the described content and structure.
