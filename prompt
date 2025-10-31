@@ -23,3 +23,29 @@ You are scaffolding a new repository named “AIDataPipelineForProductLeaders.�
    - Extension ideas (adding stages, streaming ingestion, compliance automation, analytics dashboards).
 
 Output all files with proper paths, code, configuration, and documentation matching the described content and structure.
+
+
+prompt2:
+----
+to create the .classdefinations from .jar file
+#!/bin/bash
+
+JAR_FILE="your.jar"
+OUTPUT_FILE="output.txt"
+
+# Clear previous output
+> "$OUTPUT_FILE"
+
+# Loop through each .class file inside the JAR
+for c in $(jar tf "$JAR_FILE" | grep '\.class$'); do
+  # Convert path to fully qualified class name
+  class_name=$(echo "$c" | sed 's/\.class$//' | tr '/' '.')
+  
+  echo "Processing $class_name..." | tee -a "$OUTPUT_FILE"
+  
+  # Run javap for each class and append to output
+  javap -p -cp "$JAR_FILE" "$class_name" >> "$OUTPUT_FILE" 2>/dev/null
+  echo -e "\n----------------------------------------\n" >> "$OUTPUT_FILE"
+done
+
+echo "✅ Completed! All class definitions saved in $OUTPUT_FILE"
