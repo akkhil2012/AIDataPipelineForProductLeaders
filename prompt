@@ -49,3 +49,45 @@ for c in $(jar tf "$JAR_FILE" | grep '\.class$'); do
 done
 
 echo "✅ Completed! All class definitions saved in $OUTPUT_FILE"
+
+
+prompt 3:
+------
+Template for product analysis:
+Product Strategy & Market Fit
+1. Vision Alignment
+2. Market Opportunity
+3. Differentiation & Moat
+4. Positioning and Value Proposition
+Technical Architecture & Feasibility
+1. API Integration and TechStack
+2. Data Pipeline and Governance
+3. Security & Compaliane
+4. Observability and Monitoring
+5. AI/ML Readiness
+User Experience & Design
+1. User Persons
+2. UI/UX Consistecy
+3. FeedBack Loop
+Product Performance & ROI
+1. Key Metrics/ KPIs
+2. RoI and Cost Analysis
+3. Scalability and Reliability
+4. Latency and ThroughPut
+Delivery & Execution
+1. Release Cadence
+2. CI/CD and Automation
+3. Technical Debt Management
+4. Cross Team alignment
+Governance & Maintainability
+1. Versioning and Backward Compatibility
+2. Audit and compliance readiness
+Business & Go-to-Market
+1. Pricing and Packaging Strategy
+2. Adoption Stretegy
+3. Customer Success Enablement
+Risk & Compliance
+1. Operational Risk
+2. Ethical AI and Bias monitoring
+3. Data Privacy
+
