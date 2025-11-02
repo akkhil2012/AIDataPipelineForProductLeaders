@@ -1,3 +1,20 @@
 Tookitaki:
 ----
 platform is built around a core product suite called FinCense (also referred to as the Anti-Money-Laundering Suite, AMLS) which offers transaction monitoring, screening, risk scoring, case management, AI/ML modelling
+
+They also offer a “Compliance-as-a-Service” (CaaS) model for fast-growing institutions and fintechs, enabling lower CAPEX, quicker deployment and cloud delivery.
+
+Limitations / things to probe (thinking as a product manager)
+
+While they claim “100% risk coverage”, in practice no system can cover all emerging financial crime — need to understand what “coverage” means (typology library, data sources, geographic breadth).
+
+Integration with legacy systems: For banks with existing AML systems, how smooth is migration/integration?
+
+Data privacy / regulatory constraints: Since they advocate collaborative intelligence and federated learning, questions around data governance, cross-border sharing, anonymisation, etc emerge.
+
+Explainability & auditability: For regulators, AI/ML must be auditable. They do mention XAI, but in implementation, ensuring model transparency will be key.
+
+Customisation vs standardisation: For global banks vs regional fintechs — how flexible is the product for local regulatory regimes?
+
+ROI metrics and proof: While they highlight some case-studies, as a buyer or PM you’d want detailed metrics (reduction in false positives, cost saved, speed to value) to build your business case.
+
