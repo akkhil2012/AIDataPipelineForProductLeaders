@@ -36,6 +36,8 @@ The Spring Boot applications are organized as six independently deployable servi
 
 The shared architecture unlocks fast onboarding for new engineers, consistent observability (health checks, metrics, logging), and predictable integration patterns for adjacent systems.
 
+For a quick visual of how the services, Python orchestrator, configuration, and UI pieces interact, see the **colored architecture diagram** in [`CompleteDataPipeline/data-platform-springboot-microservices/ARCHITECTURE.md`](CompleteDataPipeline/data-platform-springboot-microservices/ARCHITECTURE.md). It highlights the flow from raw events through the microservice chain into storage and consumer-facing dashboards.
+
 ## Orchestration pipeline
 The `pipeline/` folder provides a Python CLI (`run_pipeline.py`) and config-driven YAML definitions to exercise every microservice stage in sequence. Sample data (`sample_data.json`) includes duplicates and intentional quality issues so the pipeline demonstrates realistic transformations during a run. You can dry-run the orchestration with `--simulate` to validate connectivity before spinning up the Java services.
 
